@@ -1,0 +1,43 @@
+20 rand cities, seed 25.
+name    time        length      
+dfj     170s        2975.29
+mtz     0.1s        2975.29
+flow    1.38s       2975.29
+step    3.183s      2975.29
+
+
+20 rand cities, seed 35.
+name    time        length      
+dfj     153s        3182.28
+mtz     0.453s      3182.28
+flow    3.66s       3182.28
+step    9.171s      3182.28
+
+25 rand cities, seed 25.
+name    time        length      
+dfj
+mtz     0.13s       2857.29
+flow    2,134s      2857.29
+step    15.07s      2857.29
+
+
+dantzig42.dat
+name    time        length      
+dfj
+mtz     13.51s      679.202
+flow    14.41s      679.202      
+step    1200s       679.202
+
+berlin52.dat
+name    time        length      
+dfj     oom
+mtz     1.53s       7544.37
+flow    16.44s      7544.37    
+step    1715s       7544.37
+
+bier127.dat
+name    time        length
+dfj
+mtz     
+flow
+step
