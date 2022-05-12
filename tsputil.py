@@ -67,7 +67,7 @@ def valid_tour(tour, cities):
     return set(tour) == set(cities) and len(tour) == len(cities)
 
 
-def plot_labeled_lines(points, args, length ):
+def plot_labeled_lines(points, args, length, duration=100):
     """Plot individual points, labeled with an index number.
     Then, args describe lines to draw between those points.
     An arg can be a matplotlib style, like 'ro--', which sets the style until changed,
@@ -109,11 +109,13 @@ def plot_labeled_lines(points, args, length ):
                 bbox={'facecolor':'red', 'alpha':0.5, 'pad':10})
 #            color='green', fontsize=15)
     #plt.legend(loc=1)#handles=[blue_line])
-    plt.show()    
+    plt.show(block=False)    
+    plt.pause(duration)
+    plt.close()
 
 
 
-def plot_situation(cities,x=[]):    
+def plot_situation(cities,x=[], duration=100):    
     edge_style_list=[]
     for (i,j) in x:
         if x[i,j] > 0.98:
@@ -130,7 +132,7 @@ def plot_situation(cities,x=[]):
         length = "Tour length {:.1f}".format(tour_length(cities, x))
     else:
         length=None
-    plot_labeled_lines(cities, edge_style_list, length)
+    plot_labeled_lines(cities, edge_style_list, length, duration)
 
 
 def read_instance(filename):

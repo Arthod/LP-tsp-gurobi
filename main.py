@@ -85,14 +85,20 @@ def solve_tsp_dfj(points, vartype=GRB.BINARY, solver="glpk", silent=True):
 
     
     m.optimize()
-    subtour = []
     while True:
+        #subtours = [find_subtour(x, E, len(V))]#[find_subtour(x, E, len(V)) for _ in range(10)]
         subtour = find_subtour(x, E, len(V))
         
         if (len(subtour) == len(V)):
             break
+
+        #for subtour in subtours:
         m.addConstr(gp.quicksum([x[i, j] for i in subtour for j in subtour if i < j]) <= len(subtour) - 1)
         m.optimize()
+        #result = {e: x[e].X for e in E}
+
+        #plot_situation(points, result, duration=0.1)
+
 
     #while (i_initial != i)
 
